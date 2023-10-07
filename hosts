@@ -1,0 +1,11 @@
+[machine]
+192.168.70.44
+
+
+
+[machine:vars]
+ansible_ssh_private_key_file=/root/ansible_project/roles/smkey.pem
+#ansible_user=ec2-user
+ansible_user=devops
+ansible_sudo_pass=$iliconMind
+ansible_python_interpreter=/usr/bin/python

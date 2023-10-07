@@ -1,0 +1,6 @@
+    - name: add devops to docker group
+      user:
+        name: devops
+        groups: docker
+    
+

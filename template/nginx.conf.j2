@@ -1,0 +1,19 @@
+server {
+	listen 80;
+        server_name {{server_name}}; 
+	resolver {{resolver}};
+	return 301 https://$server_name$request_uri;
+}
+
+server {
+	listen 443 ssl;
+	server_name {{server_name}};
+	resolver {{resolver}};
+	ssl_certificate /etc/nginx/ssl/cert.crt;
+	ssl_certificate_key /etc/nginx/ssl/key.key;
+	location / {
+	resolver {{resolver}};
+	 proxy_pass http://phpmatest;
+	 
+	}
+}

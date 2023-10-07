@@ -1,0 +1,19 @@
+   - name: permit traffic in default zone on port 80/tcp
+     firewalld:
+         port: 80/tcp
+         permanent: true
+         state: enabled
+  
+
+   - name: permit traffic in default zone on port 443/tcp
+     firewalld:
+         port: 443/tcp
+         permanent: true
+         state: enabled
+
+ 
+   - name: reload service firewalld
+     systemd:
+         name: firewalld
+         state: reloaded
+

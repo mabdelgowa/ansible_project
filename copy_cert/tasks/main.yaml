@@ -1,0 +1,17 @@
+          - name: Create directory
+            file:
+               path: /etc/nginx/ssl
+               state: directory
+
+          - name: copy cerificate
+            copy:
+               src: cert.crt
+               dest: /etc/nginx/ssl/
+
+
+          - name: copy key
+            copy:
+               src: key.key
+               dest: /etc/nginx/ssl/
+
+

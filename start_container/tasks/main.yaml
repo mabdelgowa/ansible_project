@@ -1,0 +1,12 @@
+    - name: copy docker compose
+      copy:
+        src: docker-compose.yml
+        dest: /home/devops/docker-compose.yml
+
+    - name: start container from compose
+      command:
+        cmd: docker-compose -f /home/devops/docker-compose.yml up -d
+
+
+
+

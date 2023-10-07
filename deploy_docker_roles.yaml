@@ -1,0 +1,34 @@
+---
+- name: Install nginx server
+  hosts: machine
+  become: yes
+  become_method: sudo
+  roles: 
+      - install_epel
+      - nginx
+      - start_nginx
+      - install_python3
+      - install_docker
+      - install_docker_compose
+      - start_container
+      - hostname_config
+      - copy_cert
+      - firewall_config
+
+
+
+- name: nginx configuration
+  hosts: machine
+  vars_files:
+    - /root/ansible_project/roles/vars/hostname.yml
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: copy config file
+    template:
+        src: template/nginx.conf.j2
+        dest: /etc/nginx/conf.d/nginx.conf
+  - name: reload nginx
+    systemd:
+       name: nginx
+       state: reloaded

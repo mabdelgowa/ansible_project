@@ -1,0 +1,34 @@
+version: '3.1'
+services:
+       db:
+                image: mysql
+                restart: always
+                networks: 
+                  - dbnet
+                environment:
+                         MYSQL_ROOT_PASSWORD: password
+                volumes:
+                       - ~/data:/var/lib/mysql
+       phpmatest:
+                depends_on:
+                        - db
+                image: phpmyadmin
+                restart: always
+                hostname: phpmatest
+                networks:
+                  - dbnet
+                     
+                links:
+                  - db:db
+                volumes:
+                       - ~/phpmyadmin_data/ssl:/bitnami/'
+
+                environment:
+                        DATABASE_PASSWORD: password
+                        DATABASE_HOST: db
+                        DATABASE_USER: root
+                        
+networks:
+     dbnet:
+       driver: bridge
+        

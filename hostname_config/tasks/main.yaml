@@ -1,0 +1,10 @@
+    - name: copy config file
+      copy:
+        src: check.sh
+        dest: /home/devops/check.sh
+
+
+    - name: run config file
+      command:
+       cmd: bash /home/devops/check.sh
+
