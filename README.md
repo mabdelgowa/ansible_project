@@ -1,7 +1,3 @@
-Certainly! Here's a comprehensive `README.md` file for the [ansible_project](https://github.com/mabdelgowa/ansible_project) repository, designed to provide clear guidance on its purpose, structure, and usage.
-
----
-
 # Ansible Project: LAMP Stack Deployment with Docker
 
 This Ansible project automates the deployment of a LAMP (Linux, Nginx, MySQL, PHPMyAdmin) stack. In this setup, Nginx is installed directly on the host machine, while MySQL and PHPMyAdmin are deployed within Docker containers. The project is structured using Ansible roles for modularity and maintainability.
@@ -51,7 +47,7 @@ ansible_project/
   - **start_container/**: Starts Docker containers for MySQL and PHPMyAdmin.
   - **start_nginx/**: Starts and enables Nginx service.
 - **template/**: Contains Jinja2 templates for configuration files.
-- **vars/**: Defines variables used across roles. ([GitHub - ansible/ansible: Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy and maintain. Automate everything from code deployment to network configuration to cloud management, in a language that approaches plain English, using SSH, with no agents to install on remote systems. https://docs.ansible.com.](https://github.imc.re/ansible/ansible?utm_source=chatgpt.com), [https://github.com/enginyoyen/ansible-best-practises | Ecosyste.ms: Awesome](https://awesome.ecosyste.ms/projects/github.com%2Fenginyoyen%2Fansible-best-practises?utm_source=chatgpt.com), [Ansible-Project · GitHub](https://github.com/Ansible-Project?utm_source=chatgpt.com))
+- **vars/**: Defines variables used across roles. 
 
 ## 🚀 Deployment Instructions
 
@@ -86,7 +82,7 @@ ansible_project/
 - **Ansible Configuration**: The `ansible.cfg` file is pre-configured to use the provided `hosts` inventory and roles directory.
 - **Nginx Installation**: Nginx is installed directly on the host machine to serve as the web server.
 - **Dockerized Services**: MySQL and PHPMyAdmin are deployed within Docker containers for isolation and ease of management.
-- **Security**: Ensure that sensitive information, such as passwords and certificates, are handled securely. Consider using Ansible Vault to encrypt sensitive data. ([https://github.com/enginyoyen/ansible-best-practises | Ecosyste.ms: Awesome](https://awesome.ecosyste.ms/projects/github.com%2Fenginyoyen%2Fansible-best-practises?utm_source=chatgpt.com))
+- **Security**: Ensure that sensitive information, such as passwords and certificates, are handled securely. Consider using Ansible Vault to encrypt sensitive data. 
 
 ## 🤝 Contributing
 
